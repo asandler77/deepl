@@ -10,19 +10,38 @@ export default () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: 'green',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}>
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{title: 'Overview'}}
+          options={{
+            title: 'Overview',
+          }}
         />
         <Stack.Screen
           name={'Details'}
           component={DetailsScreen}
-          // options={{title: 'kuku'}}
-          options={({route}: any) => ({title: route.params?.name})}
+          options={{
+            title: 'Detailss',
+          }}
+          // options={({route}: any) => ({title: route.params?.name})}
         />
-        <Stack.Screen name={'About'} component={About} />
+        <Stack.Screen
+          name={'About'}
+          component={About}
+          options={{
+            title: 'Detailss',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
